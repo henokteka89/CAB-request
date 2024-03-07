@@ -21,3 +21,38 @@ Short-term development overhead in updating queries. Long-term benefits include 
 Action Requested
 Approval to enforce parameterized queries, ensuring better resource management and system reliability. 
 Attached are frequently utilized strings by the application that require parameterization or conversion into stored procedures.
+
+
+CAB Request: Strategic Enhancement of Database Interactions through Stored Procedures
+
+Requester: SQL Database Administrators
+Date: March 5, 2024
+
+Overview:
+We recommend a strategic enhancement in our approach to database interactions by adopting stored procedures more broadly, especially for queries that are frequently executed. This initiative is aimed at optimizing both performance and security within our database operations.
+
+Context:
+While not all queries originate from the application, a significant portion, particularly those that are frequently run, currently rely on direct SQL execution. This practice has led to:
+
+Elevated CPU usage due to repeated query compilations.
+Increased memory demands from storing multiple execution plans.
+Proposed Direction:
+To address these inefficiencies and security concerns, we propose the selective migration of these frequently executed queries to stored procedures for the following reasons:
+
+Efficient Execution: Stored procedures, being precompiled, reduce the CPU's workload by eliminating the need for frequent compilations.
+Memory Optimization: They also optimize memory usage by leveraging a single cached execution plan.
+Security Enhancement: Importantly, stored procedures limit direct table access, greatly enhancing security by encapsulating business logic and providing fine-grained permission controls. This shift not only reduces the risk of unauthorized access but also decreases the vulnerability to SQL injection attacks for these critical query paths.
+Centralization of Logic: Centralizing logic within stored procedures simplifies maintenance and ensures consistency across database interactions.
+Anticipated Advantages:
+
+Reduction in CPU and memory usage, leading to improved system performance.
+A more secure database environment, with enhanced control over data access and manipulation.
+Streamlined maintenance and development processes through the consolidation of business logic.
+Considerations:
+Adapting to this model involves an initial development phase to identify and convert frequently executed queries to stored procedures. While this represents an upfront investment in time and resources, the payoff in terms of system efficiency, security, and maintainability is substantial.
+
+Request for Action:
+We seek the CAB's endorsement to proceed with this targeted approach towards employing stored procedures, aligning our database practices with best practices for performance and security.
+
+Conclusion:
+By focusing on migrating frequently executed queries to stored procedures, we aim to significantly enhance our database operations. This approach promises not only improved performance and reduced resource consumption but also a fortified security posture, aligning with our commitment to maintaining a robust and efficient technology infrastructure.
