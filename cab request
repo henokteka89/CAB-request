@@ -1,0 +1,23 @@
+CAB Request: Implementation of Parameterized SQL Queries
+
+Requester: 
+Date:  
+
+Summary
+We propose shifting from direct string SQL queries to parameterized queries across our applications to address CPU and memory pressures, which degrade system performance.
+Issue
+Non-parameterized SQL queries cause:
+•	High CPU utilization due to frequent compilations.
+•	Memory pressure from caching multiple plans for similar queries.
+Proposal
+Mandatory use of parameterized SQL queries for all database interactions.
+Update existing queries and enforce through code reviews.
+ Benefits
+•	Reduced CPU and memory usage.
+•	Improved system performance and scalability.
+•	Enhanced security against SQL injection.
+Impact
+Short-term development overhead in updating queries. Long-term benefits include lower operational costs, improved performance, and enhanced security.
+Action Requested
+Approval to enforce parameterized queries, ensuring better resource management and system reliability. 
+Attached are frequently utilized strings by the application that require parameterization or conversion into stored procedures.
